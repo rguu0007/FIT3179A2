@@ -15,8 +15,8 @@
         "value": null, 
         "bind": {
           "input": "select",
-          "options": [null, "_World", "China", "Australia", "Niger",  "Yemen"], 
-          "labels": ["Show all", "World", "China", "Australia", "Niger",  "Yemen"],
+          "options": [null, "_World", "China", "Australia", "Niger",  "Yemen", "United States of America", "South Korea"], 
+          "labels": ["Show all", "World", "China", "Australia", "Niger",  "Yemen", "United States of America", "South Korea"],
           "name": "Select Countries"
         }
       }
@@ -58,5 +58,8 @@
           ]
         }
       }
-    ]
+    ],
+    "config": {
+      "axisX": {"grid": false}
+    }
   }
