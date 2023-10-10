@@ -1,12 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
+    "width": 600,
     "height": 450,
+    "title": "Fertility rate over time",
     "data": {"url": "https://raw.githubusercontent.com/rguu0007/FIT3179W10/master/data/fertility_rate_long.csv"},
     "encoding": {
       "x": {"field": "Year", "type": "temporal"},
-      "y": {"field": "Fertility_rate", "type": "quantitative"},
-      "color": {"field": "Country", "type": "nominal"}
+      "y": {"field": "Fertility_rate", "type": "quantitative", "title": "Fertility Rate"},
+      "color": {"field": "Country", "type": "nominal","scale": {"scheme": "tableau10"}}
     },
     "params": [
       {
@@ -14,19 +15,19 @@
         "value": null, 
         "bind": {
           "input": "select",
-          "options": [null, "China", "Australia", "Niger",  "Yemen", "Somalia", "Japan"], 
-          "labels": ["Show all", "China", "Australia", "Niger",  "Yemen", "Somalia", "Japan"],
+          "options": [null, "_World", "China", "Australia", "Niger",  "Yemen"], 
+          "labels": ["Show all", "World", "China", "Australia", "Niger",  "Yemen"],
           "name": "Select Countries"
         }
       }
     ],
     "transform": [
-      {"filter": "datum.Country == 'China' || datum.Country == 'Australia' || datum.Country == 'Niger' || datum.Country == 'Yemen' || datum.Country == 'Somalia' || datum.Country == 'Japan ' || datum.Country == 'United States of America'"},
-      {"filter": "null == selectedCountries || datum.Country == selectedCountries"},
+      {"filter": "datum.Country == 'China' || datum.Country == 'Australia' || datum.Country == 'Niger' || datum.Country == 'Yemen' || datum.Country == '_World' || datum.Country == 'United States of America' || datum.Country == 'South Korea'"},
+      {"filter": "null == selectedCountries || datum.Country == selectedCountries"}
     ],
     "layer": [
       {
-        "mark": "line"
+        "mark": {"type": "line", "interpolate": "monotone"}
       }, 
       {
         "params": [
@@ -44,7 +45,17 @@
           "size": {
             "condition": {"test": {"param": "hover", "empty": false}, "value": 48},
             "value": 100
-          }
+          },
+          "tooltip": [
+            {"field": "Country", "type": "nominal", "title": "Country"},
+            {"field": "Year", "type": "temporal","timeUnit": "year", "title": "Year" 
+            },
+            {
+              "field": "Fertility_rate",
+              "type": "quantitative",
+              "title": "Fertility Rate"
+            }
+          ]
         }
       }
     ]
