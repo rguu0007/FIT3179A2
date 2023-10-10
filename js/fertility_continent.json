@@ -1,0 +1,103 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "title": "Average Fertility Rate by Continent over Time",
+    "data": {
+      "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/data/fertility_continnent_long.csv"
+    },
+    "transform": [
+      {
+        "filter": "datum.Continent !== 'NA'"
+      },
+      {
+        "aggregate": [
+          {"op": "mean", "field": "Fertility_rate", "as": "avg_Fertility_rate"}
+        ],
+        "groupby": ["Year", "Continent"]
+      }
+    ],
+    "vconcat": [
+      {
+        "width": 700,
+        "height": 450,
+        "encoding": {
+          "x": {"field": "Year", "type": "temporal", "scale": {"domain": {"param": "brush"}},"title": ""},
+          "y": {
+            "field": "avg_Fertility_rate",
+            "type": "quantitative",
+            "title": "Average Fertility Rate"
+          },
+          "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": {"scheme": "set3"}
+          }
+        },
+        "layer": [
+          {"mark": {"type": "area"}},
+          {
+            "params": [
+              {
+                "name": "hover",
+                "select": {"type": "point", "on": "mouseover", "clear": "mouseout"}
+              }
+            ],
+            "mark": {"type": "area", "tooltip": true},
+            "encoding": {
+              "opacity": {
+                "condition": {"test": {"param": "hover", "empty": false}, "value": 1},
+                "value": 0
+              },
+              "size": {
+                "condition": {
+                  "test": {"param": "hover", "empty": false},
+                  "value": 48
+                },
+                "value": 100
+              },
+              "tooltip": [
+                {"field": "Continent", "type": "nominal", "title": "Continent"},
+                {
+                  "field": "Year",
+                  "type": "temporal",
+                  "timeUnit": "year",
+                  "title": "Year"
+                },
+                {
+                  "field": "avg_Fertility_rate",
+                  "type": "quantitative",
+                  "title": "Average Fertility Rate",
+                  "format": ".2f"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "width": 700,
+        "height": 100,
+        "mark": {"type": "area"},
+        "params": [{
+          "name": "brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }],
+        "encoding": {
+          "x": {"field": "Year", "type": "temporal", "title": "Time"
+          },
+          "y": {
+            "field": "avg_Fertility_rate",
+            "type": "quantitative",
+            "title": "Average Fertility Rate",
+            "axis": {"tickCount": 3, "grid": false}
+          },
+          "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": {"scheme": "set3"}
+          }
+        }
+      }
+    ]
+  }
+  
