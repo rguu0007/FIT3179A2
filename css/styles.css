@@ -1,0 +1,42 @@
+/* styles.css */
+.fertility-time-text{
+    padding: 20px;
+}
+
+.container {
+    background-color: #f1f1f1; /* You can use any desired shade of grey */
+  }
+/* CSS for styling the title */
+.page-title {
+    text-align: center;
+    color: #3498db;
+    padding: 20px 0;
+    font-size: 60px;
+}
+
+.container-title {
+    color: #3498db;
+    font-size: 30px;
+}
+
+/* Add a grey background to the entire page */
+body {
+    background-color: #665e5e;
+    /* Adjust the color as needed */
+    padding: 20px;
+    /* Add padding for spacing */
+}
+
+/* Style the card headers */
+.card-header {
+    background-color: #343a40;
+    /* Dark grey color for card headers */
+    color: rgb(15, 11, 11);
+}
+
+/* CSS for center-aligning map containers */
+.map-container {
+    display: flex;
+    justify-content: center;
+    /* Adjust the height to your preferred value */
+}

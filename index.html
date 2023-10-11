@@ -1,64 +1,137 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
-  
-  <!-- CSS file -->
+
+  <!-- Link to the external CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
-
+  <!-- Include Bootstrap CSS for card styling -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
-  
-<div id="choropleth_map"></div>
+  <div class="container">
+    <br>
 
-<div id="fertility_map"></div>
+    <!-- Card container for choropleth map -->
+    <div class="card">
+      <h1 class="page-title">World Fertility Rate</h1>
+      <div class="card-body">
+        <div>Fertility rate is a crucial demographic indicator that measures the average number of children born to
+          women of childbearing age in a given population. This essential metric provides valuable insights into a
+          nation's or region's population growth, healthcare, and social development.</div>
+        <br>
+        <div>Fertility rates vary across countries and regions, and they are influenced by a multitude of factors,
+          including socio-economic conditions, cultural norms, healthcare accessibility, and family planning policies.
+          Understanding fertility rate trends is essential for governments, policymakers, and researchers to make
+          informed decisions regarding healthcare services, education, and economic planning.</div>
+        <br>
+        <div>Visualizing fertility rate data over time can offer a compelling perspective on how populations are
+          evolving. Through interactive charts and graphs, one can explore how fertility rates change in response to
+          socio-economic development, policy changes, and societal shifts.</div>
+      </div>
+    </div>
 
-<div id="fertility_time">
-  <br>
-</div>
-<br><br><br><br>
+    <!-- Card container for fertility map -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h1 class="container-title">Overview</h1>
+      </div>
+      <div class="card-body">
+        <div class="map-container" id="fertility_map"></div>
+        <div>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the average
+          number of children born to women of childbearing age across the globe. This interactive map provides a
+          comprehensive view of fertility rates across all countries, giving you an overview of population dynamics on a
+          global scale.</div>
+      </div>
+    </div>
 
-<div id="fertility_continent">
-  <br>
-</div>
-<br><br><br><br>
+    <!-- Card container for fertility time -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h1 class="container-title">Fertility Time</h1>
+      </div>
+      <div class="card-body">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-8">
+              <!-- Left half: Place your chart here -->
+              <div id="fertility_time"></div>
+            </div>
+            <div class="col-md-4">
+              <!-- Right half: Add your text here -->
+              <div class="fertility-time-text">
+                <p>This is the text content on the right side of the card.</p>
+                <p>You can add your text content here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Card container for fertility continent -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h1 class="container-title">Fertility by Continent</h1>
+      </div>
+      <div class="card-body">
+        <div id="fertility_continent"></div>
+      </div>
+    </div>
 
-<script type="text/javascript">
+    <div class="card mt-4">
+      <div class="card-header">
+        <h1 class="container-title">Relationship to other potential factors</h1>
+      </div>
+      <div class="card-body">
+      </div>
+    </div>
 
-  var spec2 = "js/cost_of_living.json";
-  vegaEmbed('#choropleth_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+    <div class="card mt-4">
+      <div class="card-header">
+        <h1 class="container-title">Detail research on Country A</h1>
+      </div>
+      <div class="card-body">
+      </div>
+    </div>
 
-<script type="text/javascript">
+    <br><br>
+  </div>
 
-  var spec2 = "js/fertility_rate.json";
-  vegaEmbed('#fertility_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+  <script type="text/javascript">
+    var spec2 = "js/cost_of_living.json";
+    vegaEmbed('#choropleth_map', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    var spec2 = "js/fertility_rate.json";
+    vegaEmbed('#fertility_map', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
 
-  var spec2 = "js/fertility_time.json";
-  vegaEmbed('#fertility_time', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+  <script type="text/javascript">
+    var spec2 = "js/fertility_time.json";
+    vegaEmbed('#fertility_time', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
 
-<script type="text/javascript">
-
-  var spec2 = "js/fertility_continent.json";
-  vegaEmbed('#fertility_continent', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+  <script type="text/javascript">
+    var spec2 = "js/fertility_continent.json";
+    vegaEmbed('#fertility_continent', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
 
 </body>
+
 </html>

@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
-    "height": 450,
+    "width": 400,
+    "height": 400,
     "title": "Fertility rate over time",
     "data": {"url": "https://raw.githubusercontent.com/rguu0007/FIT3179W10/master/data/fertility_rate_long.csv"},
     "encoding": {
@@ -17,7 +17,7 @@
           "input": "select",
           "options": [null, "_World", "China", "Australia", "Niger",  "Yemen", "United States of America", "South Korea"], 
           "labels": ["Show all", "World", "China", "Australia", "Niger",  "Yemen", "United States of America", "South Korea"],
-          "name": "Select Countries"
+          "name": "Select Countries: "
         }
       }
     ],
