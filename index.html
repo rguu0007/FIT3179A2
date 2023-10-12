@@ -44,14 +44,25 @@
       </div>
       <div class="card-body">
         <div class="map-container" id="fertility_map"></div>
-        <div>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the average
-          number of children born to women of childbearing age across the globe. This interactive map provides a
-          comprehensive view of fertility rates across all countries, giving you an overview of population dynamics on a
-          global scale.</div>
-          <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the average
-            number of children born to women of childbearing age across the globe. This interactive map provides a
-            comprehensive view of fertility rates across all countries, giving you an overview of population dynamics on a
-            global scale.</p>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+              average
+              number of children born to women of childbearing age across the globe. This interactive map provides a
+              comprehensive view of fertility rates across all countries, giving you an overview of population
+              dynamics on a
+              global scale.</p>
+          </div>
+          <div class="col-md-6">
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -61,28 +72,26 @@
         <h1 class="container-title">Fertility Rate by Country</h1>
       </div>
       <div class="card-body">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-8">
-              <!-- Left half: Place your chart here -->
-              <div id="fertility_time"></div>
-            </div>
-            <div class="col-md-4">
-              <!-- Right half: Add your text here -->
-              <div class="fertility-time-text">
-                <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
-                  average
-                  number of children born to women of childbearing age across the globe. This interactive map provides a
-                  comprehensive view of fertility rates across all countries, giving you an overview of population
-                  dynamics on a
-                  global scale.</p>
-                <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
-                  average
-                  number of children born to women of childbearing age across the globe. This interactive map provides a
-                  comprehensive view of fertility rates across all countries, giving you an overview of population
-                  dynamics on a
-                  global scale.</p>
-              </div>
+        <div class="row">
+          <div class="col-md-7">
+            <!-- Left half: Place your chart here -->
+            <div id="fertility_time"></div>
+          </div>
+          <div class="col-md-5">
+            <!-- Right half: Add your text here -->
+            <div class="fertility-time-text">
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
             </div>
           </div>
         </div>
@@ -95,7 +104,36 @@
         <h1 class="container-title">Fertility Rate by Continent</h1>
       </div>
       <div class="card-body">
-        <div id="fertility_continent"></div>
+
+        <div class="row">
+          <div class="col-md-7">
+            <!-- Left half: Place your chart here -->
+            <div id="fertility_continent"></div>
+          </div>
+          <div class="col-md-5">
+            <!-- Right half: Add your text here -->
+            <div class="fertility-time-text">
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+                <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                  average
+                  number of children born to women of childbearing age across the globe. This interactive map provides a
+                  comprehensive view of fertility rates across all countries, giving you an overview of population
+                  dynamics on a
+                  global scale.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -104,6 +142,29 @@
         <h1 class="container-title">Relationship to other potential factors</h1>
       </div>
       <div class="card-body">
+        <div class="row">
+          <div class="col-md-7">
+            <!-- Left half: Place your chart here -->
+            <div id="fertility_GDP"></div>
+          </div>
+          <div class="col-md-5">
+            <!-- Right half: Add your text here -->
+            <div class="fertility-time-text">
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -142,6 +203,13 @@
   <script type="text/javascript">
     var spec2 = "js/fertility_continent.json";
     vegaEmbed('#fertility_continent', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
+  <script type="text/javascript">
+    var spec2 = "js/fertility_GDP.json";
+    vegaEmbed('#fertility_GDP', spec2).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>

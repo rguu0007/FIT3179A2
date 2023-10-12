@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": " Fertility Rate vs GDP (1960 - 2016)" , "fontSize": 25},
+    "width": 400,
+    "height": 300,
+    "params": [
+      {
+        "name": "year_selection",
+        "value": 2010,
+        "bind": {
+          "input": "range",
+          "min": 1960,
+          "max": 2016,
+          "step": 1,
+          "name": "Year:  "
+        }
+      }
+    ],
+    "data": {
+      "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/data/fertility_GDP.csv"
+    },
+    "transform": [
+      {"filter": "datum.Year == year_selection"},
+      {"filter": "datum.Country != 'High income' && datum.Country != 'Middle income'&& datum.Country != 'Euro area'&& datum.Country != 'Arab World'"}
+    ],
+    "mark": "point",
+    "encoding": {
+      "size": {"value": 70},
+      "x": {
+        "field": "GDP",
+        "type": "quantitative",
+        "axis": {"tickCount": 8},
+        "scale": {"type": "log","domain": [1e+6, 1e+14]}
+      },
+      "y": {
+        "field": "Fertility_rate",
+        "type": "quantitative",
+        "scale": {"zero": false,"domain": [0,9]},
+        "title": "Fertility Rate"
+      },
+      "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {
+              "field": "Fertility_rate",
+              "type": "quantitative",
+              "format": ".2f",
+              "title": "Fertility Rate"
+            },
+            {
+              "field": "GDP",
+              "type": "quantitative",
+              "format": ".0f"
+            }
+  
+          ]
+    }
+  }
+  
