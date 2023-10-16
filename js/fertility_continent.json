@@ -18,8 +18,8 @@
     ],
     "vconcat": [
       {
-        "width": 400,
-        "height": 450,
+        "width": 800,
+        "height": 350,
         "encoding": {
           "x": {"field": "Year", "type": "temporal", "scale": {"domain": {"param": "brush"}},"title": ""},
           "y": {
@@ -76,7 +76,7 @@
         ]
       },
       {
-        "width": 400,
+        "width": 800,
         "height": 100,
         "mark": {"type": "area"},
         "params": [{

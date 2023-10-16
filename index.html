@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+
+
 <head>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
@@ -14,7 +16,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
-<body>
+<body style="font-family: 'CustomFont', Arial, Helvetica, sans-serif;">
   <div class="container">
     <br>
 
@@ -22,18 +24,35 @@
     <div class="card">
       <h1 class="page-title">World Fertility Rate</h1>
       <div class="card-body">
-        <div>Fertility rate is a crucial demographic indicator that measures the average number of children born to
-          women of childbearing age in a given population. This essential metric provides valuable insights into a
-          nation's or region's population growth, healthcare, and social development.</div>
-        <br>
-        <div>Fertility rates vary across countries and regions, and they are influenced by a multitude of factors,
-          including socio-economic conditions, cultural norms, healthcare accessibility, and family planning policies.
-          Understanding fertility rate trends is essential for governments, policymakers, and researchers to make
-          informed decisions regarding healthcare services, education, and economic planning.</div>
-        <br>
-        <div>Visualizing fertility rate data over time can offer a compelling perspective on how populations are
-          evolving. Through interactive charts and graphs, one can explore how fertility rates change in response to
-          socio-economic development, policy changes, and societal shifts.</div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="fertility-time-text">
+              <div><span style="color: blue; font-weight: bold;">Fertility rate</span> is a crucial demographic
+                indicator that measures the average number of children born to
+                women of childbearing age in a given population. This essential metric provides valuable insights into a
+                nation's or region's population growth and healthcare.</div>
+              <br>
+              <div>Fertility rates vary across countries and regions, and they are influenced by a multitude of factors,
+                including <span style="font-weight: bold;">socio-economic conditions, cultural norms, healthcare
+                  accessibility, and family planning
+                  policies</span>.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="fertility-time-text">
+              <p>Understanding fertility rate trends is essential for governments, policymakers, and researchers to make
+                informed decisions regarding <span style="font-weight: bold;">healthcare services</span>, <span
+                  style="font-weight: bold;">education</span>, and <span style="font-weight: bold;">economic
+                  planning</span>.<br><br>Visualizing
+                fertility rate data over time can offer a compelling perspective on how populations are
+                evolving. Through interactive charts and graphs, one can explore how fertility rates change in response
+                to
+                socio-economic development, policy changes, and societal shifts.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -43,24 +62,30 @@
         <h1 class="container-title">Overview</h1>
       </div>
       <div class="card-body">
-        <div class="map-container"><div  id="fertility_map"></div></div>
+        <div class="map-container">
+          <div id="fertility_map"></div>
+        </div>
 
         <div class="row">
           <div class="col-md-6">
-            <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
-              average
-              number of children born to women of childbearing age across the globe. This interactive map provides a
-              comprehensive view of fertility rates across all countries, giving you an overview of population
-              dynamics on a
-              global scale.</p>
+            <div class="fertility-time-text">
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+            </div>
           </div>
           <div class="col-md-6">
-            <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
-              average
-              number of children born to women of childbearing age across the globe. This interactive map provides a
-              comprehensive view of fertility rates across all countries, giving you an overview of population
-              dynamics on a
-              global scale.</p>
+            <div class="fertility-time-text">
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -72,7 +97,9 @@
         <h1 class="container-title">Fertility Rate by Country</h1>
       </div>
       <div class="card-body">
-        <div class="map-container"><div  id="fertility_time"></div></div>
+        <div class="chart-container">
+          <div id="fertility_time"></div>
+        </div>
         <div class="row">
 
           <div class="col-md-6">
@@ -107,13 +134,12 @@
         <h1 class="container-title">Fertility Rate by Continent</h1>
       </div>
       <div class="card-body">
-
+        <div class="chart-container">
+          <div id="fertility_continent"></div>
+        </div>
         <div class="row">
-          <div class="col-md-7">
-            <!-- Left half: Place your chart here -->
-            <div id="fertility_continent"></div>
-          </div>
-          <div class="col-md-5">
+
+          <div class="col-md-6">
             <!-- Right half: Add your text here -->
             <div class="fertility-time-text">
               <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
@@ -122,12 +148,11 @@
                 comprehensive view of fertility rates across all countries, giving you an overview of population
                 dynamics on a
                 global scale.</p>
-              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
-                average
-                number of children born to women of childbearing age across the globe. This interactive map provides a
-                comprehensive view of fertility rates across all countries, giving you an overview of population
-                dynamics on a
-                global scale.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- Right half: Add your text here -->
+            <div class="fertility-time-text">
               <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
                 average
                 number of children born to women of childbearing age across the globe. This interactive map provides a
@@ -146,11 +171,11 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-md-7">
+          <div class="col-md-6">
             <!-- Left half: Place your chart here -->
             <div id="fertility_GDP"></div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <!-- Right half: Add your text here -->
             <div class="fertility-time-text">
               <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the

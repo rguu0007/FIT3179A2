@@ -41,6 +41,11 @@ body {
     /* Adjust the height to your preferred value */
 }
 
+.chart-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 /* Custom CSS for consistent text alignment and spacing */
 .fertility-map-text {
     margin: 0; /* Reset margin to eliminate extra space */
