@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   
-    "title": {"text": "Average Fertility Rate by Continent over Time", "fontSize": 25},
+    "title": {"text": "Average Fertility Rate by Continent over Time", "fontSize": 25, "anchor": "middle"},
     "data": {
       "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/data/fertility_continnent_long.csv"
     },
@@ -18,7 +18,7 @@
     ],
     "vconcat": [
       {
-        "width": 800,
+        "width": 850,
         "height": 350,
         "encoding": {
           "x": {"field": "Year", "type": "temporal", "scale": {"domain": {"param": "brush"}},"title": ""},
@@ -76,7 +76,7 @@
         ]
       },
       {
-        "width": 800,
+        "width": 850,
         "height": 100,
         "mark": {"type": "area"},
         "params": [{
