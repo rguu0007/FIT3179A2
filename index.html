@@ -173,9 +173,9 @@
         <div class="row">
           <div class="col-md-6">
             <div class="chart-container">
-            <!-- Left half: Place your chart here -->
-            <div id="fertility_GDP"></div>
-          </div>
+              <!-- Left half: Place your chart here -->
+              <div id="fertility_GDP"></div>
+            </div>
           </div>
           <div class="col-md-6">
             <!-- Right half: Add your text here -->
@@ -200,9 +200,58 @@
 
     <div class="card mt-4">
       <div class="card-header">
-        <h1 class="container-title">Detail research on Country A</h1>
+        <h1 class="container-title">Detail research on South Korea</h1>
       </div>
       <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="chart-container">
+              <!-- Left half: Place your chart here -->
+              <div id="korean_fertility"></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- Right half: Add your text here -->
+            <div class="fertility-time-text">
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="chart-container">
+              <!-- Left half: Place your chart here -->
+              <div id="korean_fertility"></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- Right half: Add your text here -->
+            <div class="fertility-time-text">
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
+                average
+                number of children born to women of childbearing age across the globe. This interactive map provides a
+                comprehensive view of fertility rates across all countries, giving you an overview of population
+                dynamics on a
+                global scale.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -240,6 +289,13 @@
   <script type="text/javascript">
     var spec2 = "js/fertility_GDP.json";
     vegaEmbed('#fertility_GDP', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
+  <script type="text/javascript">
+    var spec2 = "js/korean_fertility.json";
+    vegaEmbed('#korean_fertility', spec2).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>
