@@ -7,7 +7,7 @@
         "fontSize": 25
     },
     "data": {
-        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W10/master/data/fertility_rate_long.csv"
+        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/data/fertility_rate_long.csv"
     },
     "encoding": {
         "x": {

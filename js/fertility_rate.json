@@ -20,7 +20,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W9/main/js/ne_110m_admin_0_countries.topojson",
+        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/js/ne_110m_admin_0_countries.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
       "transform": [
@@ -34,28 +34,28 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W9/main/js/oceans.topojson",
+        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/js/oceans.topojson",
         "format": {"type": "topojson", "feature": "oceans"}
       },
       "mark": {"type": "geoshape", "fill": "lightblue"}
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W9/main/js/WorldMapWithGraticules.topojson",
+        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/js/WorldMapWithGraticules.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
       "mark": {"type": "geoshape", "fill": null, "stroke": "gray"}
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W10/master/data/fertility_rate_long.csv"
+        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/data/fertility_rate_long.csv"
       },
       "transform": [
         {
           "lookup": "Country",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W9/main/js/WorldMapWithGraticules.topojson",
+              "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/js/WorldMapWithGraticules.topojson",
               "format": {
                 "type": "topojson",
                 "feature": "ne_110m_admin_0_countries"
@@ -118,14 +118,14 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W10/master/data/fertility_rate_long.csv"
+        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/data/fertility_rate_long.csv"
       },
       "transform": [
         {
           "lookup": "Country",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W9/main/js/WorldMapWithGraticules.topojson",
+              "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/js/WorldMapWithGraticules.topojson",
               "format": {
                 "type": "topojson",
                 "feature": "ne_110m_admin_0_countries"
