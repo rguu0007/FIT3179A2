@@ -2,113 +2,189 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 400,
     "height": 300,
-    "title": {"text": "Fertility Rate Of South Korea", "fontSize": 25},
+    "title": {
+        "text": "Fertility Rate Of South Korea",
+        "fontSize": 25
+    },
     "data": {
-      "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W10/master/data/fertility_rate_long.csv"
+        "url": "https://raw.githubusercontent.com/rguu0007/FIT3179W10/master/data/fertility_rate_long.csv"
     },
     "encoding": {
-      "x": {"field": "Year", "type": "temporal"},
-      "y": {
-        "field": "Fertility_rate",
-        "type": "quantitative",
-        "title": "Fertility Rate"
-      }
+        "x": {
+            "field": "Year",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "Fertility_rate",
+            "type": "quantitative",
+            "title": "Fertility Rate"
+        }
     },
-    "transform": [{"filter": "datum.Country == 'South Korea'"}],
-    "layer": [
-      {"mark": {"type": "line", "color": "orange"}},
-      {
-        "mark": {"type": "circle", "tooltip": true, "color": "gray"},
-        "encoding": {
-          "color": {
-            "condition": {
-              "test": "datum.Fertility_rate == 4.54 || datum.Fertility_rate == 5.93|| datum.Fertility_rate == 2.57|| datum.Fertility_rate == 1.48|| datum.Fertility_rate == 1.13",
-              "value": "red"
-            }
-          },
-          "size": {
-            "condition": {
-              "test": "datum.Fertility_rate == 4.54 || datum.Fertility_rate == 5.93|| datum.Fertility_rate == 2.57|| datum.Fertility_rate == 1.48|| datum.Fertility_rate == 1.13",
-              "value": 100
-            },
-            "value": 50
-          },
-          "tooltip": [
-            {
-              "field": "Year",
-              "type": "temporal",
-              "timeUnit": "year",
-              "title": "Year"
-            },
-            {
-              "field": "Fertility_rate",
-              "type": "quantitative",
-              "title": "Fertility Rate"
-            }
-          ]
+    "transform": [
+        {
+            "filter": "datum.Country == 'South Korea'"
         }
-      },
-      {
-        "mark": {"type": "text", "fontSize": 10},
-        "encoding": {
-          "text": {"condition": {
-              "test": "datum.Fertility_rate == 4.54",
-              "value": "In 1971, the two-child family model began."
-            },
-            "value": "" },
-          "x": {"value": 160}, 
-          "y": {"value": 70}  
-        }
-      },
-      {
-        "mark": {"type": "text", "fontSize": 10},
-        "encoding": {
-          "text": {"condition": {
-              "test": "datum.Fertility_rate == 5.93",
-              "value": "In 1961, birth control policy began."
-            },
-            "value": "" },
-          "x": {"value": 100}, 
-          "y": {"value": 20}  
-        }
-      },
-      {
-        "mark": {"type": "text", "fontSize": 10},
-        "encoding": {
-          "text": {"condition": {
-              "test": "datum.Fertility_rate == 2.57",
-              "value": "In 1981, the one-child family model began."
-            },
-            "value": "" },
-          "x": {"value": 250}, 
-          "y": {"value": 170}  
-        }
-      },
-      {
-        "mark": {"type": "text", "fontSize": 10},
-        "encoding": {
-          "text": {"condition": {
-              "test": "datum.Fertility_rate == 1.48",
-              "value": "In 2000, Korea entering an aging society."
-            },
-            "value": "" },
-          "x": {"value": 300}, 
-          "y": {"value": 210}  
-        }
-      },
-      {
-        "mark": {"type": "text", "fontSize": 10},
-        "encoding": {
-          "text": {"condition": {
-              "test": "datum.Fertility_rate == 1.48",
-              "value": "In 2006,The 1st Plan for Aging Society and Population in Korea."
-            },
-            "value": "" },
-          "x": {"value": 240}, 
-          "y": {"value": 270}  
-        }
-      }
-      
     ],
-    "config": {"axisX": {"grid": false}}
-  }
+    "layer": [
+        {
+            "mark": {
+                "type": "line",
+                "color": "orange"
+            }
+        },
+        {
+            "mark": {
+                "type": "circle",
+                "tooltip": true,
+                "color": "gray"
+            },
+            "encoding": {
+                "color": {
+                    "condition": {
+                        "test": "datum.Fertility_rate == 4.54 || datum.Fertility_rate == 5.93|| datum.Fertility_rate == 2.57|| datum.Fertility_rate == 1.48|| datum.Fertility_rate == 1.13",
+                        "value": "red"
+                    }
+                },
+                "size": {
+                    "condition": {
+                        "test": "datum.Fertility_rate == 4.54 || datum.Fertility_rate == 5.93|| datum.Fertility_rate == 2.57|| datum.Fertility_rate == 1.48|| datum.Fertility_rate == 1.13",
+                        "value": 100
+                    },
+                    "value": 50
+                },
+                "tooltip": [
+                    {
+                        "field": "Year",
+                        "type": "temporal",
+                        "timeUnit": "year",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "Fertility_rate",
+                        "type": "quantitative",
+                        "title": "Fertility Rate"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 10
+            },
+            "encoding": {
+                "text": {
+                    "condition": {
+                        "test": "datum.Fertility_rate == 4.54",
+                        "value": "In 1971, the two-child family model began."
+                    },
+                    "value": ""
+                },
+                "x": {
+                    "value": 160
+                },
+                "y": {
+                    "value": 70
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 10
+            },
+            "encoding": {
+                "text": {
+                    "condition": {
+                        "test": "datum.Fertility_rate == 5.93",
+                        "value": "In 1961, birth control policy began."
+                    },
+                    "value": ""
+                },
+                "x": {
+                    "value": 100
+                },
+                "y": {
+                    "value": 20
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 10
+            },
+            "encoding": {
+                "text": {
+                    "condition": {
+                        "test": "datum.Fertility_rate == 2.57",
+                        "value": "In 1981, the one-child family model began."
+                    },
+                    "value": ""
+                },
+                "x": {
+                    "value": 250
+                },
+                "y": {
+                    "value": 170
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 10
+            },
+            "encoding": {
+                "text": {
+                    "condition": {
+                        "test": "datum.Fertility_rate == 1.48",
+                        "value": "In 2000, Korea entering an aging society."
+                    },
+                    "value": ""
+                },
+                "x": {
+                    "value": 300
+                },
+                "y": {
+                    "value": 210
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 10
+            },
+            "encoding": {
+                "text": {
+                    "condition": {
+                        "test": "datum.Fertility_rate == 1.48",
+                        "value": "In 2006,The 1st Plan for Aging Society and Population in Korea."
+                    },
+                    "value": ""
+                },
+                "x": {
+                    "value": 240
+                },
+                "y": {
+                    "value": 270
+                }
+            }
+        }
+    ],
+    "config": {
+        "axisX": {
+            "grid": false
+        },
+        "axis": {
+            "titleFont": "Arial"
+        },
+        "title": {
+            "font": "Arial"
+        },
+        "text": {
+            "font": "Arial"
+        }
+    }
+}
