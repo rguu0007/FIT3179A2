@@ -29,7 +29,7 @@
       "x": {
         "field": "GDP",
         "type": "quantitative",
-        "axis": {"tickCount": 8},
+        "axis": {"tickCount": 3},
         "scale": {"type": "log","domain": [1e+6, 1e+14]}
       },
       "y": {
@@ -49,7 +49,7 @@
             {
               "field": "GDP",
               "type": "quantitative",
-              "format": ".0f"
+              "format": ","
             }
   
           ]

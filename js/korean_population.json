@@ -1,0 +1,184 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "South Korea Population 2020",
+      "fontSize": 25,
+      "anchor": "middle"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/rguu0007/FIT3179A2/master/data/korean-population.csv"
+    },
+    "params": [
+      {
+        "name": "highlight",
+        "select": {"type": "point", "on": "mouseover", "clear": "mouseout"}
+      }
+    ],
+    "spacing": 0,
+    "hconcat": [
+      {
+        "width": 170,
+        "height": 350,
+        "transform": [{"filter": {"field": "Gender", "equal": "Female"}}],
+        "title": {"text": "Female", "color": "#df1b0d7c"},
+        "mark": {
+          "type": "bar",
+          "fill": "#df1b0d7c",
+          "stroke": "black",
+          "cursor": "pointer"
+        },
+        "encoding": {
+          "x": {
+            "aggregate": "sum",
+            "field": "Value",
+            "title": "",
+            "axis": {"format": "s"},
+            "sort": "descending"
+          },
+          "y": {
+            "field": "Age_range",
+            "axis": null,
+            "sort": [
+              " 100+",
+              " 95-99",
+              " 90-94",
+              " 85-89",
+              " 80-84",
+              " 75-79",
+              " 70-74",
+              " 65-69",
+              " 60-64",
+              " 55-59",
+              " 50-54",
+              " 45-49",
+              " 40-44",
+              " 35-39",
+              " 30-34",
+              " 25-29",
+              " 20-24",
+              " 15-19",
+              " 10-14",
+              " 5-9",
+              " 0-4"
+            ]
+          },
+          "tooltip": [
+            {"field": "Gender"},
+            {"field": "Age_range", "title": "Age Range"},
+            {
+              "field": "Value",
+              "type": "quantitative",
+              "format": ",",
+              "title": "Population:"
+            }
+          ],
+          "strokeWidth": {
+            "condition": [{"param": "highlight", "empty": false, "value": 1}],
+            "value": 0
+          }
+        }
+      },
+      {
+        "width": 60,
+        "height": 350,
+        "title": "Age Range",
+        "view": {"stroke": null},
+        "mark": {"type": "text", "align": "center"},
+        "encoding": {
+          "y": {
+            "field": "Age_range",
+            "type": "ordinal",
+            "axis": null,
+            "sort": [
+              " 100+",
+              " 95-99",
+              " 90-94",
+              " 85-89",
+              " 80-84",
+              " 75-79",
+              " 70-74",
+              " 65-69",
+              " 60-64",
+              " 55-59",
+              " 50-54",
+              " 45-49",
+              " 40-44",
+              " 35-39",
+              " 30-34",
+              " 25-29",
+              " 20-24",
+              " 15-19",
+              " 10-14",
+              " 5-9",
+              " 0-4"
+            ]
+          },
+          "text": {"field": "Age_range", "type": "ordinal"}
+        }
+      },
+      {
+        "width": 170,
+        "height": 350,
+        "transform": [{"filter": {"field": "Gender", "equal": "Male"}}],
+        "title": {"text": "Male", "color": "#3b8bdc"},
+        "mark": {
+          "type": "bar",
+          "fill": "#3b8bdc",
+          "stroke": "black",
+          "cursor": "pointer"
+        },
+        "encoding": {
+          "y": {
+            "field": "Age_range",
+            "title": null,
+            "axis": null,
+            "sort": [
+              " 100+",
+              " 95-99",
+              " 90-94",
+              " 85-89",
+              " 80-84",
+              " 75-79",
+              " 70-74",
+              " 65-69",
+              " 60-64",
+              " 55-59",
+              " 50-54",
+              " 45-49",
+              " 40-44",
+              " 35-39",
+              " 30-34",
+              " 25-29",
+              " 20-24",
+              " 15-19",
+              " 10-14",
+              " 5-9",
+              " 0-4"
+            ]
+          },
+          "x": {
+            "aggregate": "sum",
+            "field": "Value",
+            "title": null,
+            "axis": {"format": "s"}
+          },
+          "color": {"field": "Gender", "legend": null},
+          "tooltip": [
+            {"field": "Gender"},
+            {"field": "Age_range", "title": "Age Range"},
+            {
+              "field": "Value",
+              "type": "quantitative",
+              "format": ",",
+              "title": "Population:"
+            }
+          ],
+          "strokeWidth": {
+            "condition": [{"param": "highlight", "empty": false, "value": 1}],
+            "value": 0
+          }
+        }
+      }
+    ],
+    "config": {"view": {"stroke": null}, "axis": {"grid": false}}
+  }

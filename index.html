@@ -167,7 +167,7 @@
 
     <div class="card mt-4">
       <div class="card-header">
-        <h1 class="container-title">Relationship to other potential factors</h1>
+        <h1 class="container-title">Relationship to GDP</h1>
       </div>
       <div class="card-body">
         <div class="row">
@@ -200,7 +200,7 @@
 
     <div class="card mt-4">
       <div class="card-header">
-        <h1 class="container-title">Detail research on South Korea</h1>
+        <h1 class="container-title">Detail Research on South Korea</h1>
       </div>
       <div class="card-body">
         <div class="row">
@@ -213,47 +213,51 @@
           <div class="col-md-6">
             <!-- Right half: Add your text here -->
             <div class="fertility-time-text">
-              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
-                average
-                number of children born to women of childbearing age across the globe. This interactive map provides a
-                comprehensive view of fertility rates across all countries, giving you an overview of population
-                dynamics on a
-                global scale.</p>
-              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
-                average
-                number of children born to women of childbearing age across the globe. This interactive map provides a
-                comprehensive view of fertility rates across all countries, giving you an overview of population
-                dynamics on a
-                global scale.</p>
+              <p>The Fertility Rate of South Korea graph highlights pivotal events related to the country's fertility
+                rate. It underscores the substantial influence of deliberate policies and various factors. For instance,
+                the data reflects a significant decline in fertility rates following the <span style="font-weight: bold;">1961</span> introduction of the "<span style="font-weight: bold;">Birth Control Policy.</span>
+                "
+              </p>
+              <p>Despite subsequent government initiatives aimed at addressing demographic challenges, such as the 2006
+                "<span style="font-weight: bold;">1st Plan for Aging Society and Population in Korea</span>," South Korea continues to experience a declining
+                fertility rate. This ongoing decline places South Korea among the countries with the lowest fertility
+                rates globally.</p>
             </div>
           </div>
-          
+
           <div class="col-md-6">
             <div class="chart-container">
               <!-- Left half: Place your chart here -->
-              <div id="korean_fertility"></div>
+              <div id="korean_population"></div>
             </div>
           </div>
           <div class="col-md-6">
             <!-- Right half: Add your text here -->
             <div class="fertility-time-text">
-              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
-                average
-                number of children born to women of childbearing age across the globe. This interactive map provides a
-                comprehensive view of fertility rates across all countries, giving you an overview of population
-                dynamics on a
-                global scale.</p>
-              <p>The world fertility rate serves as a vital demographic metric, offering a broad perspective on the
-                average
-                number of children born to women of childbearing age across the globe. This interactive map provides a
-                comprehensive view of fertility rates across all countries, giving you an overview of population
-                dynamics on a
-                global scale.</p>
+              <p>The graph illustrates that in the year 2020, the Korean population within the age range of 35-64
+                constituted the largest segment. For <span style="color: #df1b0d7c; font-weight: bold;">females</span>, the age range of 50-54 showed the highest population
+                count, totaling 2,176,994 individuals. Among <span style="color: #3b8bdc; font-weight: bold;">males</span>, the age range of 40-49 had the highest population
+                count, with 2,196,042 individuals.
+              </p>
+              <p>This population pyramid reveals that South Korea is experiencing an "<span style="font-weight: bold;">aging society</span>," indicating an
+                unstable population structure. As time progresses, if the fertility rate in Korea doesn't increase
+                sufficiently, the younger generation may struggle to support the aging population. This demographic
+                shift could lead to the unique scenario of Korea facing a potential natural population decline, making
+                it a cautionary example of the challenges <span style="font-weight: bold;">posed by an aging population.</span></p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="card mt-4">
+      <div class="card-body">
+        <p>This visulaisation is created by Ran Gu</p>
+        <p>Data source from Kaggle</p>
+      </div>
+    </div>
+
+
 
     <br><br>
   </div>
@@ -296,6 +300,13 @@
   <script type="text/javascript">
     var spec2 = "js/korean_fertility.json";
     vegaEmbed('#korean_fertility', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
+  <script type="text/javascript">
+    var spec2 = "js/korean_population.json";
+    vegaEmbed('#korean_population', spec2).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>
